@@ -147,6 +147,75 @@ export default function DashboardPage() {
                 </div>
               </div>
             </div>
+
+            <div className="mt-8 grid gap-6 xl:grid-cols-3">
+              <div className="xl:col-span-2 rounded-2xl border border-white/10 bg-white/5 p-6 transition-all duration-300 hover:border-blue-400/20 hover:bg-white/10">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <p className="text-sm uppercase tracking-[0.2em] text-blue-300">
+                      AI Assistant
+                    </p>
+                    <h2 className="mt-2 text-2xl font-semibold">SumBa Copilot</h2>
+                  </div>
+
+                  <div className="rounded-xl border border-blue-500/20 bg-blue-500/10 px-3 py-2 text-sm text-blue-300">
+                    Online
+                  </div>
+                </div>
+
+                <div className="mt-6 space-y-4">
+                  <div className="max-w-[80%] rounded-2xl border border-white/10 bg-slate-900/60 p-4">
+                    <p className="text-xs uppercase tracking-[0.2em] text-slate-400">
+                      Manager
+                    </p>
+                    <p className="mt-2 text-sm text-slate-200">
+                      Which products require urgent action today?
+                    </p>
+                  </div>
+
+                  <div className="ml-auto max-w-[85%] rounded-2xl border border-blue-500/20 bg-blue-500/10 p-4">
+                    <p className="text-xs uppercase tracking-[0.2em] text-blue-300">
+                      SumBa AI
+                    </p>
+                    <p className="mt-2 text-sm text-slate-100">
+                      3 urgent items detected: Milk in Store A needs reorder
+                      within 24 hours, Bananas in Store B need discount action,
+                      and Store C shows unusual revenue activity that should be
+                      reviewed.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="mt-6 flex gap-3">
+                  <input
+                    type="text"
+                    placeholder="Ask SumBa AI something..."
+                    className="flex-1 rounded-xl border border-white/10 bg-slate-900/50 px-4 py-3 text-sm text-white placeholder:text-slate-400 outline-none transition focus:border-blue-400 focus:ring-2 focus:ring-blue-500/20"
+                  />
+                  <button className="rounded-xl bg-blue-600 px-5 py-3 font-medium text-white transition hover:bg-blue-500">
+                    Ask
+                  </button>
+                </div>
+              </div>
+
+              <div className="rounded-2xl border border-white/10 bg-white/5 p-6 transition-all duration-300 hover:border-white/20 hover:bg-white/10">
+                <h2 className="text-xl font-semibold">AI Quick Prompts</h2>
+                <div className="mt-5 space-y-3">
+                  <button className="w-full rounded-xl bg-white/5 px-4 py-3 text-left text-sm text-slate-200 transition hover:bg-white/10">
+                    Which products are at risk this week?
+                  </button>
+                  <button className="w-full rounded-xl bg-white/5 px-4 py-3 text-left text-sm text-slate-200 transition hover:bg-white/10">
+                    Why did revenue increase today?
+                  </button>
+                  <button className="w-full rounded-xl bg-white/5 px-4 py-3 text-left text-sm text-slate-200 transition hover:bg-white/10">
+                    What discounts should I apply now?
+                  </button>
+                  <button className="w-full rounded-xl bg-white/5 px-4 py-3 text-left text-sm text-slate-200 transition hover:bg-white/10">
+                    Show top operational risks
+                  </button>
+                </div>
+              </div>
+            </div>
           </section>
         </PageTransition>
       </div>
