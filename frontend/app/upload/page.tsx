@@ -6,25 +6,38 @@ import Sidebar from "@/components/Sidebar";
 export default function UploadPage() {
   const [selectedFile, setSelectedFile] = useState<string>("No file selected");
   const [uploadStatus, setUploadStatus] = useState<string>("");
+  const [progress, setProgress] = useState<number>(0);
 
   const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
+
     if (file) {
       setSelectedFile(file.name);
       setUploadStatus("");
+      setProgress(0);
     } else {
       setSelectedFile("No file selected");
       setUploadStatus("");
+      setProgress(0);
     }
   };
 
   const handleUpload = () => {
     if (selectedFile === "No file selected") {
       setUploadStatus("Please select a file first.");
+      setProgress(0);
       return;
     }
 
-    setUploadStatus("File uploaded successfully. Processing started.");
+    setUploadStatus("Processing dataset...");
+    setProgress(25);
+
+    setTimeout(() => setProgress(55), 500);
+    setTimeout(() => setProgress(80), 1000);
+    setTimeout(() => {
+      setProgress(100);
+      setUploadStatus("File uploaded successfully. Processing completed.");
+    }, 1500);
   };
 
   return (
@@ -82,12 +95,30 @@ export default function UploadPage() {
                   Upload Dataset
                 </button>
 
+                {progress > 0 && (
+                  <div className="mx-auto mt-6 w-full max-w-md">
+                    <div className="mb-2 flex items-center justify-between text-sm text-slate-300">
+                      <span>Processing Progress</span>
+                      <span>{progress}%</span>
+                    </div>
+
+                    <div className="h-3 w-full overflow-hidden rounded-full bg-slate-800">
+                      <div
+                        className="h-full rounded-full bg-blue-500 transition-all duration-500"
+                        style={{ width: `${progress}%` }}
+                      />
+                    </div>
+                  </div>
+                )}
+
                 {uploadStatus && (
                   <p
                     className={`mt-4 text-sm ${
-                      uploadStatus.includes("successfully")
+                      uploadStatus.includes("completed")
                         ? "text-emerald-400"
-                        : "text-amber-400"
+                        : uploadStatus.includes("select")
+                        ? "text-amber-400"
+                        : "text-blue-300"
                     }`}
                   >
                     {uploadStatus}
