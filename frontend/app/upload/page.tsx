@@ -1,5 +1,20 @@
+"use client";
+
+import { useState } from "react";
 import Sidebar from "@/components/Sidebar";
+
 export default function UploadPage() {
+  const [selectedFile, setSelectedFile] = useState<string>("No file selected");
+
+  const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files?.[0];
+    if (file) {
+      setSelectedFile(file.name);
+    } else {
+      setSelectedFile("No file selected");
+    }
+  };
+
   return (
     <main className="min-h-screen bg-slate-950 text-white">
       <div className="flex min-h-screen">
@@ -28,12 +43,25 @@ export default function UploadPage() {
                   Drag and drop your file here
                 </p>
                 <p className="mt-2 text-sm text-slate-400">
-                  or click below to choose a file manually
+                  or choose a file manually
                 </p>
 
-                <button className="mt-6 rounded-xl bg-blue-600 px-5 py-3 font-medium text-white hover:bg-blue-500">
-                  Choose File
-                </button>
+                <div className="mt-6">
+                  <label className="inline-flex cursor-pointer items-center justify-center rounded-xl bg-blue-600 px-5 py-3 font-medium text-white transition hover:bg-blue-500">
+                    Choose File
+                    <input
+                      type="file"
+                      accept=".csv,.xlsx"
+                      onChange={handleFileChange}
+                      className="hidden"
+                    />
+                  </label>
+                </div>
+
+                <p className="mt-4 text-sm text-slate-300">
+                  Selected file:{" "}
+                  <span className="font-medium text-white">{selectedFile}</span>
+                </p>
               </div>
             </div>
 
