@@ -1,44 +1,9 @@
+import Sidebar from "@/components/Sidebar";
 export default function DashboardPage() {
   return (
     <main className="min-h-screen bg-slate-950 text-white">
       <div className="flex min-h-screen">
-        <aside className="w-64 border-r border-white/10 bg-slate-900/80 p-6">
-          <h2 className="text-2xl font-bold text-blue-400">SumBa</h2>
-          <p className="mt-1 text-sm text-slate-400">Retail Intelligence</p>
-
-          <nav className="mt-10 space-y-3">
-            <a
-              href="/dashboard"
-              className="block rounded-xl bg-blue-600 px-4 py-3 text-sm font-medium text-white"
-            >
-              Dashboard
-            </a>
-            <a
-              href="#"
-              className="block rounded-xl px-4 py-3 text-sm text-slate-300 hover:bg-white/5"
-            >
-              Upload Center
-            </a>
-            <a
-              href="#"
-              className="block rounded-xl px-4 py-3 text-sm text-slate-300 hover:bg-white/5"
-            >
-              Alerts
-            </a>
-            <a
-              href="#"
-              className="block rounded-xl px-4 py-3 text-sm text-slate-300 hover:bg-white/5"
-            >
-              Recommendations
-            </a>
-            <a
-              href="#"
-              className="block rounded-xl px-4 py-3 text-sm text-slate-300 hover:bg-white/5"
-            >
-              Reports
-            </a>
-          </nav>
-        </aside>
+        <Sidebar />
 
         <section className="flex-1 p-8">
           <div className="mb-8 flex items-center justify-between">
