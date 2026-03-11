@@ -1,4 +1,5 @@
 import Sidebar from "@/components/Sidebar";
+
 export default function DashboardPage() {
   return (
     <main className="min-h-screen bg-slate-950 text-white">
@@ -53,8 +54,64 @@ export default function DashboardPage() {
                 Your AI-powered retail insights and store trends will appear here.
               </p>
 
-              <div className="mt-6 h-64 rounded-2xl border border-dashed border-white/10 bg-slate-900/50 flex items-center justify-center text-slate-500">
-                Chart area
+              <div className="mt-6 rounded-2xl border border-white/10 bg-slate-900/50 p-6">
+                <div className="flex h-64 items-end justify-between gap-3">
+                  <div className="flex flex-1 flex-col items-center gap-3">
+                    <div
+                      className="w-full rounded-t-xl bg-blue-500/80"
+                      style={{ height: "45%" }}
+                    />
+                    <span className="text-xs text-slate-400">Mon</span>
+                  </div>
+
+                  <div className="flex flex-1 flex-col items-center gap-3">
+                    <div
+                      className="w-full rounded-t-xl bg-blue-500/80"
+                      style={{ height: "60%" }}
+                    />
+                    <span className="text-xs text-slate-400">Tue</span>
+                  </div>
+
+                  <div className="flex flex-1 flex-col items-center gap-3">
+                    <div
+                      className="w-full rounded-t-xl bg-blue-500/80"
+                      style={{ height: "52%" }}
+                    />
+                    <span className="text-xs text-slate-400">Wed</span>
+                  </div>
+
+                  <div className="flex flex-1 flex-col items-center gap-3">
+                    <div
+                      className="w-full rounded-t-xl bg-blue-500/80"
+                      style={{ height: "75%" }}
+                    />
+                    <span className="text-xs text-slate-400">Thu</span>
+                  </div>
+
+                  <div className="flex flex-1 flex-col items-center gap-3">
+                    <div
+                      className="w-full rounded-t-xl bg-blue-500/80"
+                      style={{ height: "90%" }}
+                    />
+                    <span className="text-xs text-slate-400">Fri</span>
+                  </div>
+
+                  <div className="flex flex-1 flex-col items-center gap-3">
+                    <div
+                      className="w-full rounded-t-xl bg-blue-500/80"
+                      style={{ height: "70%" }}
+                    />
+                    <span className="text-xs text-slate-400">Sat</span>
+                  </div>
+
+                  <div className="flex flex-1 flex-col items-center gap-3">
+                    <div
+                      className="w-full rounded-t-xl bg-blue-500/80"
+                      style={{ height: "58%" }}
+                    />
+                    <span className="text-xs text-slate-400">Sun</span>
+                  </div>
+                </div>
               </div>
             </div>
 
