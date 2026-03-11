@@ -1,11 +1,12 @@
 import Sidebar from "@/components/Sidebar";
+import PageTransition from "@/components/PageTransition";
 
 export default function AlertsPage() {
   return (
     <main className="min-h-screen bg-slate-950 text-white">
       <div className="flex min-h-screen">
         <Sidebar />
-
+        <PageTransition>
         <section className="flex-1 p-8">
           <div className="mb-8 flex items-center justify-between">
             <div>
@@ -105,6 +106,7 @@ export default function AlertsPage() {
             </div>
           </div>
         </section>
+        </PageTransition>
       </div>
     </main>
   );

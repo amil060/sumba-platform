@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Sidebar from "@/components/Sidebar";
+import PageTransition from "@/components/PageTransition";
 
 export default function UploadPage() {
   const [selectedFile, setSelectedFile] = useState<string>("No file selected");
@@ -44,7 +45,7 @@ export default function UploadPage() {
     <main className="min-h-screen bg-slate-950 text-white">
       <div className="flex min-h-screen">
         <Sidebar />
-
+        <PageTransition>
         <section className="flex-1 p-8">
           <div className="mb-8">
             <p className="text-sm uppercase tracking-[0.25em] text-blue-300">
@@ -169,6 +170,7 @@ export default function UploadPage() {
             </div>
           </div>
         </section>
+        </PageTransition>
       </div>
     </main>
   );
