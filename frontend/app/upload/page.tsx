@@ -5,14 +5,26 @@ import Sidebar from "@/components/Sidebar";
 
 export default function UploadPage() {
   const [selectedFile, setSelectedFile] = useState<string>("No file selected");
+  const [uploadStatus, setUploadStatus] = useState<string>("");
 
   const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
     if (file) {
       setSelectedFile(file.name);
+      setUploadStatus("");
     } else {
       setSelectedFile("No file selected");
+      setUploadStatus("");
     }
+  };
+
+  const handleUpload = () => {
+    if (selectedFile === "No file selected") {
+      setUploadStatus("Please select a file first.");
+      return;
+    }
+
+    setUploadStatus("File uploaded successfully. Processing started.");
   };
 
   return (
@@ -62,6 +74,25 @@ export default function UploadPage() {
                   Selected file:{" "}
                   <span className="font-medium text-white">{selectedFile}</span>
                 </p>
+
+                <button
+                  onClick={handleUpload}
+                  className="mt-6 rounded-xl bg-emerald-600 px-5 py-3 font-medium text-white transition hover:bg-emerald-500"
+                >
+                  Upload Dataset
+                </button>
+
+                {uploadStatus && (
+                  <p
+                    className={`mt-4 text-sm ${
+                      uploadStatus.includes("successfully")
+                        ? "text-emerald-400"
+                        : "text-amber-400"
+                    }`}
+                  >
+                    {uploadStatus}
+                  </p>
+                )}
               </div>
             </div>
 
