@@ -16,7 +16,9 @@ export default function Sidebar() {
 
   return (
     <aside className="w-64 border-r border-white/10 bg-slate-900/80 p-6">
-      <h2 className="text-2xl font-bold text-blue-400">SumBa</h2>
+      <h2 className="text-2xl font-bold text-blue-400 transition duration-300 hover:text-blue-300">
+        SumBa
+      </h2>
       <p className="mt-1 text-sm text-slate-400">Retail Intelligence</p>
 
       <nav className="mt-10 space-y-3">
@@ -27,10 +29,10 @@ export default function Sidebar() {
             <Link
               key={item.href}
               href={item.href}
-              className={`block rounded-xl px-4 py-3 text-sm transition ${
+              className={`block rounded-xl px-4 py-3 text-sm transition-all duration-300 ease-out transform ${
                 isActive
-                  ? "bg-blue-600 font-medium text-white"
-                  : "text-slate-300 hover:bg-white/5"
+                  ? "bg-blue-600 font-medium text-white shadow-lg shadow-blue-600/20 scale-[1.02]"
+                  : "text-slate-300 hover:bg-white/5 hover:text-white hover:translate-x-1"
               }`}
             >
               {item.name}
